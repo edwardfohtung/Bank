@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>bank App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/stylesheets/css-reset.css">
+    <link rel="stylesheet" href="assets/stylesheets/index.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div id="app">Loading....</div>
+    <template id="login">
+      <h1>Bank App</h1>
+        
+        <a href="/dashboard" onclick="onLinkClick()">Login</a>
+        <h2>Login</h2>
+        <form id="loginForm" action="javascript:login()">
+          <label for="username">Username</label>
+          <input id="username" name="user" type="text">
+          <div id="loginError" class="error" role="alert"></div>
+          <button>Login</button>
+        </form>
+        <h2>Register</h2>
+        <form id="registerForm" action="javascript:register()">
+           <label for="user">Username</label>
+           <input id="user" name="user" type="text">
+           <label for="currency">Currency</label>
+           <input id="currency" name="currency" type="text" value="$">
+           <label for="description">Description</label>
+           <input id="description" name="description" type="text">
+           <label for="balance">Current balance</label>
+           <input id="balance" name="balance" type="number" value="0">
+           <div id="registerError" class="error" role="alert"></div>
+           <button>Register</button>
+        </form>
+
+
+      </section>
+    </template>
+    <template id="dashboard">
+      <header>
+        <h1>Bank App</h1>
+        <a href="/login" onclick="onLinkClick()">Logout</a>
+      </header>
+      <section>
+        <Balance:<span id="balance"></span><span id="currency"></span>
+        <h2 id="description"></h2>
+      </section>
+      <section>
+        <h2>Transactions</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Object</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody id="transactions"></tbody>
+        </table>
+      </section> 
+    </template>
+    <template id="transaction">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </template>
+  </body>
+</html>
